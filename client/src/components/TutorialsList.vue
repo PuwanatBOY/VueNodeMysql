@@ -1,5 +1,7 @@
 <template>
-  <div class="list row">
+<div>
+  <AllNavBar />
+  <div class="list row" style="margin-top: 20px;">
     <div class="col-md-8">
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search by title"
@@ -55,9 +57,11 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import AllNavBar from "./AllNavBar";
 import TutorialDataService from "../services/TutorialDataService";
 
 export default {
@@ -69,6 +73,9 @@ export default {
       currentIndex: -1,
       title: ""
     };
+  },
+  components: {
+    AllNavBar
   },
   methods: {
     retrieveTutorials() {

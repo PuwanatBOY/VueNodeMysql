@@ -1,5 +1,7 @@
 <template>
-  <div v-if="currentTutorial" class="edit-form">
+  <div>
+  <AllNavBar />
+  <div v-if="currentTutorial" class="edit-form" style="margin-top: 20px;">
     <h4>Tutorial</h4>
     <form>
       <div class="form-group">
@@ -51,9 +53,11 @@
     <br />
     <p>Please click on a Tutorial...</p>
   </div>
+  </div>
 </template>
 
 <script>
+import AllNavBar from "./AllNavBar";
 import TutorialDataService from "../services/TutorialDataService";
 
 export default {
@@ -63,6 +67,9 @@ export default {
       currentTutorial: null,
       message: ''
     };
+  },
+  components: {
+    AllNavBar
   },
   methods: {
     getTutorial(id) {

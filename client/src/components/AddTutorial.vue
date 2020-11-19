@@ -1,5 +1,7 @@
 <template>
-  <div class="submit-form">
+<div>
+  <AllNavBar />
+  <div class="submit-form" style="margin-top: 20px;">
     <div v-if="!submitted">
       <div class="form-group">
         <label for="title">Title</label>
@@ -32,9 +34,11 @@
       <button class="btn btn-success" @click="newTutorial">Add</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import AllNavBar from "./AllNavBar";
 import TutorialDataService from "../services/TutorialDataService";
 
 export default {
@@ -49,6 +53,9 @@ export default {
       },
       submitted: false
     };
+  },
+  components: {
+    AllNavBar
   },
   methods: {
     saveTutorial() {
